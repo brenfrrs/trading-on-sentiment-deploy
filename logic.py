@@ -13,6 +13,7 @@ from bs4 import BeautifulSoup
 import re
 from datetime import datetime
 import pytz
+import os
 from selectorlib import Extractor
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
@@ -62,7 +63,7 @@ while True:
 
             '''
 
-            def __init__(self, company, ticker='#', time_period='#tp_12'):
+            def __init__(self, company, ticker='#', time_period='#tp_24'):
                 self.company = company
                 self.time_period = time_period
                 self.ticker = ticker
@@ -132,10 +133,13 @@ while True:
                 '''
                 now = datetime.now()
                 todays_dt = now.strftime("%Y-%m-%d@%I:%M:%S%p") #used for file naming.
-                ChromeOptions = webdriver.ChromeOptions()
-                ChromeOptions.add_argument('--incognito')
-                ChromeOptions.add_argument('--headless')
-                driver = webdriver.Chrome(ChromeDriverManager().install(), options=ChromeOptions)
+                chrome_options = webdriver.ChromeOptions()
+                chrome_options.binary_location = os.environ.get('GOOGLE_CHROME_BIN')
+                chrome_options.add_argument('--headless')
+                chrome_options.add_argument('--disable-gpu')
+                chrome_options.add_argument('--no-sandbox')
+                chrome_options.add_argument('--remote-debugging-port=9222')
+                driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
                 time.sleep(2)
                 print('navigating to newslookup..')
                 news_look = "https://www.newslookup.com"
