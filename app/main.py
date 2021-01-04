@@ -29,34 +29,34 @@ from custom_scripts import *
 from sklearn.feature_extraction.text import TfidfVectorizer
 import joblib
 
-def create_app():
-    app = Flask(__name__)
 
-    @app.route('/')
-    def home():
-    	return render_template('home.html')
+app = Flask(__name__)
 
-    @app.route('/results/')
-    def results():
-        #date will get the proper csv file.
-        today = date.today()
-        todays_date = today.strftime("%Y-%m-%d")
+@app.route('/')
+def home():
+	return render_template('home.html')
 
-        df = pd.read_csv(f'daily_predictions/apple/{todays_date}.csv', index_col = 0)
-        current_prediction = df['prediction'][0]
+@app.route('/results/')
+def results():
+    #date will get the proper csv file.
+    today = date.today()
+    todays_date = today.strftime("%Y-%m-%d")
 
-        if current_prediction == 1:
-            probability = df['probability_up'][0]
-            arrow = "../static/green_arrow.svg"
-        else:
-            probability = df['probability_down'][0]
-            arrow = "../static/red_arrow.svg"
+    df = pd.read_csv(f'daily_predictions/apple/{todays_date}.csv', index_col = 0)
+    current_prediction = df['prediction'][0]
 
-        updated = df['updated'][0]
+    if current_prediction == 1:
+        probability = df['probability_up'][0]
+        arrow = "../static/green_arrow.svg"
+    else:
+        probability = df['probability_down'][0]
+        arrow = "../static/red_arrow.svg"
 
-        return render_template('results.html', arrow=arrow, probability=probability, updated=updated)
+    updated = df['updated'][0]
 
-    return app
+    return render_template('results.html', arrow=arrow, probability=probability, updated=updated)
+
+
 
     # if __name__ == '__main__':
     # 	app.run(debug=True)
