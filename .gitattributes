@@ -1,2 +1,1 @@
-../app/pickles/apple/tfidf filter=lfs diff=lfs merge=lfs -text
-/app/pickles/apple/tfidf filter=lfs diff=lfs merge=lfs -text
+/pickles/apple/tfidf filter=lfs diff=lfs merge=lfs -text
