@@ -63,7 +63,7 @@ while True:
 
             '''
 
-            def __init__(self, company, ticker='#', time_period='#tp_24'):
+            def __init__(self, company, ticker='#', time_period='#tp_1'):
                 self.company = company
                 self.time_period = time_period
                 self.ticker = ticker
