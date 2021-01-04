@@ -1,0 +1,293 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- <h2>Upcoming Predictions</h2> -->
+<div class="limiter">
+    <div class="container-table100">
+        <div class="wrap-table100">
+            <h2>Upcoming Predictions</h2>
+            <div class="table100 ver3 m-b-110">
+                <div class="table100-head">
+                    <table>
+                        <thead>
+                            <tr class="row100 head">
+                                <th class="cell100 column1">Company</th>
+                                <th class="cell100 column2">Ticker</th>
+                                <th class="cell100 column3">Updated</th>
+                                <th class="cell100 column4">Probability</th>
+                                <th class="cell100 column5">Prediction</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+
+                <div class="table100-body js-pscroll">
+                    <table>
+                        <tbody>
+                            <tr class="row100 body">
+                                <td class="cell100 column1">Apple</td>
+                                <td class="cell100 column2">$AAPL</td>
+                                <td class="cell100 column3">{{updated}}</td>
+                                <td class="cell100 column4">{{probability}}</td>
+                                <td class="cell100 column5"><img src={{arrow}} width="30" height="30" /></td>
+                            </tr>
+
+                            <tr class="row100 body">
+                                <td class="cell100 column1">The Walt Disney Company</td>
+                                <td class="cell100 column2">$DIS</td>
+                                <td class="cell100 column3">coming soon</td>
+                                <td class="cell100 column4">coming soon</td>
+                                <td class="cell100 column5"><img src="../static/red_arrow.svg" width="30" height="30" /></td>
+                            </tr>
+
+                            <tr class="row100 body">
+                                <td class="cell100 column1">Walmart Inc.</td>
+                                <td class="cell100 column2">$WMT</td>
+                                <td class="cell100 column3">coming soon</td>
+                                <td class="cell100 column4">coming soon</td>
+                                <td class="cell100 column5">coming soon</td>
+                            </tr>
+
+                            <tr class="row100 body">
+                                <td class="cell100 column1">DOW Inc.</td>
+                                <td class="cell100 column2">$DOW</td>
+                                <td class="cell100 column3">coming soon</td>
+                                <td class="cell100 column4">coming soon</td>
+                                <td class="cell100 column5">coming soon</td>
+                            </tr>
+
+                            <tr class="row100 body">
+                                <td class="cell100 column1">salesforce.com, inc.</td>
+                                <td class="cell100 column2">$CRM</td>
+                                <td class="cell100 column3">coming soon</td>
+                                <td class="cell100 column4">coming soon</td>
+                                <td class="cell100 column5">coming soon</td>
+                            </tr>
+
+                            <tr class="row100 body">
+                                <td class="cell100 column1">NIKE, Inc.</td>
+                                <td class="cell100 column2">$NKE</td>
+                                <td class="cell100 column3">coming soon</td>
+                                <td class="cell100 column4">coming soon</td>
+                                <td class="cell100 column5">coming soon</td>
+                            </tr>
+
+                            <tr class="row100 body">
+                                <td class="cell100 column1">The Home Depot, Inc.</td>
+                                <td class="cell100 column2">$HD</td>
+                                <td class="cell100 column3">coming soon</td>
+                                <td class="cell100 column4">coming soon</td>
+                                <td class="cell100 column5">coming soon</td>
+                            </tr>
+
+                            <tr class="row100 body">
+                                <td class="cell100 column1">Visa Inc.</td>
+                                <td class="cell100 column2">$V</td>
+                                <td class="cell100 column3">coming soon</td>
+                                <td class="cell100 column4">coming soon</td>
+                                <td class="cell100 column5">coming soon</td>
+                            </tr>
+
+                            <tr class="row100 body">
+                                <td class="cell100 column1">Microsoft Corporation</td>
+                                <td class="cell100 column2">$MSFT</td>
+                                <td class="cell100 column3">coming soon</td>
+                                <td class="cell100 column4">coming soon</td>
+                                <td class="cell100 column5">coming soon</td>
+                            </tr>
+
+                            <tr class="row100 body">
+                                <td class="cell100 column1">3M Company</td>
+                                <td class="cell100 column2">$MMM</td>
+                                <td class="cell100 column3">coming soon</td>
+                                <td class="cell100 column4">coming soon</td>
+                                <td class="cell100 column5">coming soon</td>
+                            </tr>
+
+                            <tr class="row100 body">
+                                <td class="cell100 column1">Cisco Systems, Inc.</td>
+                                <td class="cell100 column2">$CSCO</td>
+                                <td class="cell100 column3">coming soon</td>
+                                <td class="cell100 column4">coming soon</td>
+                                <td class="cell100 column5">coming soon</td>
+                            </tr>
+
+                            <tr class="row100 body">
+                                <td class="cell100 column1">The Coca-Cola Company</td>
+                                <td class="cell100 column2">$KO</td>
+                                <td class="cell100 column3">coming soon</td>
+                                <td class="cell100 column4">coming soon</td>
+                                <td class="cell100 column5">coming soon</td>
+                            </tr>
+
+                            <tr class="row100 body">
+                                <td class="cell100 column1">Honeywell International Inc.</td>
+                                <td class="cell100 column2">$HON</td>
+                                <td class="cell100 column3">coming soon</td>
+                                <td class="cell100 column4">coming soon</td>
+                                <td class="cell100 column5">coming soon</td>
+                            </tr>
+
+                            <tr class="row100 body">
+                                <td class="cell100 column1">Johnson & Johnson</td>
+                                <td class="cell100 column2">$JNJ</td>
+                                <td class="cell100 column3">coming soon</td>
+                                <td class="cell100 column4">coming soon</td>
+                                <td class="cell100 column5">coming soon</td>
+                            </tr>
+
+                            <tr class="row100 body">
+                                <td class="cell100 column1">The Travelers Companies, Inc.</td>
+                                <td class="cell100 column2">$TRV</td>
+                                <td class="cell100 column3">coming soon</td>
+                                <td class="cell100 column4">coming soon</td>
+                                <td class="cell100 column5">coming soon</td>
+                            </tr>
+
+                            <tr class="row100 body">
+                                <td class="cell100 column1">The Proctor & Gamble Company</td>
+                                <td class="cell100 column2">$PG</td>
+                                <td class="cell100 column3">coming soon</td>
+                                <td class="cell100 column4">coming soon</td>
+                                <td class="cell100 column5">coming soon</td>
+                            </tr>
+
+                            <tr class="row100 body">
+                                <td class="cell100 column1">Chevron Corporation</td>
+                                <td class="cell100 column2">$CVX</td>
+                                <td class="cell100 column3">coming soon</td>
+                                <td class="cell100 column4">coming soon</td>
+                                <td class="cell100 column5">coming soon</td>
+                            </tr>
+
+                            <tr class="row100 body">
+                                <td class="cell100 column1">Verizon Communications Inc.</td>
+                                <td class="cell100 column2">$VZ</td>
+                                <td class="cell100 column3">coming soon</td>
+                                <td class="cell100 column4">coming soon</td>
+                                <td class="cell100 column5">coming soon</td>
+                            </tr>
+
+                            <tr class="row100 body">
+                                <td class="cell100 column1">Caterpillar Inc.</td>
+                                <td class="cell100 column2">$CAT</td>
+                                <td class="cell100 column3">coming soon</td>
+                                <td class="cell100 column4">coming soon</td>
+                                <td class="cell100 column5">coming soon</td>
+                            </tr>
+
+                            <tr class="row100 body">
+                                <td class="cell100 column1">The Boeing Company</td>
+                                <td class="cell100 column2">$BA</td>
+                                <td class="cell100 column3">coming soon</td>
+                                <td class="cell100 column4">coming soon</td>
+                                <td class="cell100 column5">coming soon</td>
+                            </tr>
+
+                            <tr class="row100 body">
+                                <td class="cell100 column1">Amgen Inc.</td>
+                                <td class="cell100 column2">$AMGN</td>
+                                <td class="cell100 column3">coming soon</td>
+                                <td class="cell100 column4">coming soon</td>
+                                <td class="cell100 column5">coming soon</td>
+                            </tr>
+
+                            <tr class="row100 body">
+                                <td class="cell100 column1">International Business Machines Corporation</td>
+                                <td class="cell100 column2">$IBM</td>
+                                <td class="cell100 column3">coming soon</td>
+                                <td class="cell100 column4">coming soon</td>
+                                <td class="cell100 column5">coming soon</td>
+                            </tr>
+
+                            <tr class="row100 body">
+                                <td class="cell100 column1">American Express Company</td>
+                                <td class="cell100 column2">$AXP</td>
+                                <td class="cell100 column3">coming soon</td>
+                                <td class="cell100 column4">coming soon</td>
+                                <td class="cell100 column5">coming soon</td>
+                            </tr>
+
+                            <tr class="row100 body">
+                                <td class="cell100 column1">JPMorgan Chase & Co.</td>
+                                <td class="cell100 column2">$JPM</td>
+                                <td class="cell100 column3">coming soon</td>
+                                <td class="cell100 column4">coming soon</td>
+                                <td class="cell100 column5">coming soon</td>
+                            </tr>
+
+                            <tr class="row100 body">
+                                <td class="cell100 column1">Walgreens Boots Alliance, Inc.</td>
+                                <td class="cell100 column2">$WBA</td>
+                                <td class="cell100 column3">coming soon</td>
+                                <td class="cell100 column4">coming soon</td>
+                                <td class="cell100 column5">coming soon</td>
+                            </tr>
+
+                            <tr class="row100 body">
+                                <td class="cell100 column1">McDonald's Corporation</td>
+                                <td class="cell100 column2">$MCD</td>
+                                <td class="cell100 column3">coming soon</td>
+                                <td class="cell100 column4">coming soon</td>
+                                <td class="cell100 column5">coming soon</td>
+                            </tr>
+
+                            <tr class="row100 body">
+                                <td class="cell100 column1">Merck & Co., Inc.</td>
+                                <td class="cell100 column2">$MRK</td>
+                                <td class="cell100 column3">coming soon</td>
+                                <td class="cell100 column4">coming soon</td>
+                                <td class="cell100 column5">coming soon</td>
+                            </tr>
+
+                            <tr class="row100 body">
+                                <td class="cell100 column1">The Goldman Sachs Group, Inc.</td>
+                                <td class="cell100 column2">$GS</td>
+                                <td class="cell100 column3">coming soon</td>
+                                <td class="cell100 column4">coming soon</td>
+                                <td class="cell100 column5">coming soon</td>
+                            </tr>
+
+                            <tr class="row100 body">
+                                <td class="cell100 column1">UnitedHealth Group Incorporated</td>
+                                <td class="cell100 column2">$UNH</td>
+                                <td class="cell100 column3">coming soon</td>
+                                <td class="cell100 column4">coming soon</td>
+                                <td class="cell100 column5">coming soon</td>
+                            </tr>
+
+                            <tr class="row100 body">
+                                <td class="cell100 column1">Intel Corporation</td>
+                                <td class="cell100 column2">$INTC</td>
+                                <td class="cell100 column3">coming soon</td>
+                                <td class="cell100 column4">coming soon</td>
+                                <td class="cell100 column5">coming soon</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--===============================================================================================-->
+	<script src="../static/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../static/vendor/bootstrap/js/popper.js"></script>
+	<script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../static/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../static/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+	<script>
+		$('.js-pscroll').each(function(){
+			var ps = new PerfectScrollbar(this);
+
+			$(window).on('resize', function(){
+				ps.update();
+			})
+		});
+
+
+	</script>
+<!--===============================================================================================-->
+	<!-- <script src="../scripts/scripts.js"></script> -->
+{% endblock %}
