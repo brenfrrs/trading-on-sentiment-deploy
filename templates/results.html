@@ -24,11 +24,11 @@
                     <table>
                         <tbody>
                             <tr class="row100 body">
-                                <td class="cell100 column1">Apple</td>
-                                <td class="cell100 column2">$AAPL</td>
-                                <td class="cell100 column3">{{updated}}</td>
-                                <td class="cell100 column4">{{probability}}</td>
-                                <td class="cell100 column5"><img src={{arrow}} width="30" height="30" /></td>
+                                <td class="cell100 column1" style="color: white;">Apple</td>
+                                <td class="cell100 column2" style="color: white;">$AAPL</td>
+                                <td class="cell100 column3" style="color: white;">{{updated}}</td>
+                                <td class="cell100 column4" style="color: white;">{{probability}}</td>
+                                <td class="cell100 column5" style="color: white;"><img src={{arrow}} width="30" height="30" /></td>
                             </tr>
 
                             <tr class="row100 body">
@@ -36,7 +36,7 @@
                                 <td class="cell100 column2">$DIS</td>
                                 <td class="cell100 column3">coming soon</td>
                                 <td class="cell100 column4">coming soon</td>
-                                <td class="cell100 column5"><img src="../static/red_arrow.svg" width="30" height="30" /></td>
+                                <td class="cell100 column5">coming soon</td>
                             </tr>
 
                             <tr class="row100 body">
@@ -269,25 +269,6 @@
         </div>
     </div>
 <!--===============================================================================================-->
-	<script src="../static/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="../static/popper.js"></script>
 <!--===============================================================================================-->
-	<script src="../static/vendor/bootstrap/js/popper.js"></script>
-	<script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="../static/vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="../static/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-	<script>
-		$('.js-pscroll').each(function(){
-			var ps = new PerfectScrollbar(this);
-
-			$(window).on('resize', function(){
-				ps.update();
-			})
-		});
-
-
-	</script>
-<!--===============================================================================================-->
-	<!-- <script src="../scripts/scripts.js"></script> -->
 {% endblock %}
