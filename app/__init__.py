@@ -29,44 +29,34 @@ from custom_scripts import *
 from sklearn.feature_extraction.text import TfidfVectorizer
 import joblib
 
+def create_app():
+    app = Flask(__name__)
 
-app = Flask(__name__)
+    @app.route('/')
+    def home():
+    	return render_template('home.html')
 
+    @app.route('/results/')
+    def results():
+        #date will get the proper csv file.
+        today = date.today()
+        todays_date = today.strftime("%Y-%m-%d")
 
-today = date.today()
-todays_date = today.strftime("%Y-%m-%d")
+        df = pd.read_csv(f'daily_predictions/apple/{todays_date}.csv', index_col = 0)
+        current_prediction = df['prediction'][0]
 
-df = pd.read_csv(f'daily_predictions/apple/{todays_date}.csv', index_col = 0)
-current_prediction = df['prediction'][0]
+        if current_prediction == 1:
+            probability = df['probability_up'][0]
+            arrow = "../static/green_arrow.svg"
+        else:
+            probability = df['probability_down'][0]
+            arrow = "../static/red_arrow.svg"
 
-if current_prediction == 1:
-    probability = df['probability_up'][0]
-else:
-    probability = df['probability_down'][0]
+        updated = df['updated'][0]
 
-updated = df['updated'][0]
+        return render_template('results.html', arrow=arrow, probability=probability, updated=updated)
 
-app = Flask(__name__)
+    return app
 
-@app.route('/')
-def home():
-	return render_template('home.html')
-
-@app.route('/results/')
-def results():
-    df = pd.read_csv(f'daily_predictions/apple/{todays_date}.csv', index_col = 0)
-    current_prediction = df['prediction'][0]
-
-    if current_prediction == 1:
-        probability = df['probability_up'][0]
-        arrow = "../static/green_arrow.svg"
-    else:
-        probability = df['probability_down'][0]
-        arrow = "../static/red_arrow.svg"
-
-    updated = df['updated'][0]
-
-    return render_template('results.html', arrow=arrow, probability=probability, updated=updated)
-
-if __name__ == '__main__':
-	app.run(debug=True)
+    # if __name__ == '__main__':
+    # 	app.run(debug=True)
