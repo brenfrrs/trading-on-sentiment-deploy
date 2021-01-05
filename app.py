@@ -39,7 +39,7 @@ def home():
 @app.route('/results/')
 def results():
     #date will get the proper csv file.
-    tz_NY = pytz.timezone('America/New_York')
+	tz_NY = pytz.timezone('America/New_York')
 	datetime_NY = datetime.now(tz_NY)
 	todays_date = datetime_NY.strftime("%Y-%m-%d")
 
