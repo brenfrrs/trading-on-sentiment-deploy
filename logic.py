@@ -32,8 +32,9 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 import joblib
 import sys
 
-today = date.today()
-todays_date = today.strftime("%Y-%m-%d")
+tz_NY = pytz.timezone('America/New_York')
+datetime_NY = datetime.now(tz_NY)
+todays_date = datetime_NY.strftime("%Y-%m-%d")
 
 co = ['apple']
 
@@ -63,7 +64,7 @@ while True:
 
             '''
 
-            def __init__(self, company, ticker='#', time_period='#tp_1'):
+            def __init__(self, company, ticker='#', time_period='#tp_24'):
                 self.company = company
                 self.time_period = time_period
                 self.ticker = ticker
@@ -325,8 +326,11 @@ while True:
 
             df = pd.merge(text, sentiment, how='inner', left_index=True, right_index=True)
 
-            today = date.today()
-            todays_date = today.strftime("%Y-%m-%d")
+            # today = date.today()
+            # todays_date = today.strftime("%Y-%m-%d") #need NY time on server.
+            tz_NY = pytz.timezone('America/New_York')
+            datetime_NY = datetime.now(tz_NY)
+            todays_date = datetime_NY.strftime("%Y-%m-%d")
 
             df = pd.DataFrame(df.loc[todays_date]).T
 
