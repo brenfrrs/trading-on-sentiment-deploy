@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 from newspaper import fulltext, Article
-from datetime import date, timedelta
+from datetime import date, timedelta, datetime
 import requests
 import pandas as pd
 from dateutil import parser
@@ -11,7 +11,6 @@ import time
 import requests
 from bs4 import BeautifulSoup
 import re
-from datetime import datetime
 import pytz
 import os
 from selectorlib import Extractor

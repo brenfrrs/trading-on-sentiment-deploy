@@ -10,7 +10,7 @@ import time
 import requests
 from bs4 import BeautifulSoup
 import re
-import datetime
+from datetime import datetime
 import pytz
 from selectorlib import Extractor
 from selenium import webdriver
