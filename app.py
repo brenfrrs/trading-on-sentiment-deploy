@@ -43,19 +43,19 @@ def results():
 	datetime_NY = datetime.now(tz_NY)
 	todays_date = datetime_NY.strftime("%Y-%m-%d")
 
-    df = pd.read_csv(f'daily_predictions/apple/{todays_date}.csv', index_col = 0)
-    current_prediction = df['prediction'][0]
+	df = pd.read_csv(f'daily_predictions/apple/{todays_date}.csv', index_col = 0)
+	current_prediction = df['prediction'][0]
 
-    if current_prediction == 1:
-        probability = df['probability_up'][0]
-        arrow = "../static/green_arrow.svg"
-    else:
-        probability = df['probability_down'][0]
-        arrow = "../static/red_arrow.svg"
+	if current_prediction == 1:
+		probability = df['probability_up'][0]
+		arrow = "../static/green_arrow.svg"
+	else:
+		probability = df['probability_down'][0]
+		arrow = "../static/red_arrow.svg"
 
-    updated = df['updated'][0]
+	updated = df['updated'][0]
 
-    return render_template('results.html', arrow=arrow, probability=probability, updated=updated)
+	return render_template('results.html', arrow=arrow, probability=probability, updated=updated)
 
 
 
