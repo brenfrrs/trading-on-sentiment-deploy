@@ -39,8 +39,9 @@ def home():
 @app.route('/results/')
 def results():
     #date will get the proper csv file.
-    today = date.today()
-    todays_date = today.strftime("%Y-%m-%d")
+    tz_NY = pytz.timezone('America/New_York')
+	datetime_NY = datetime.now(tz_NY)
+	todays_date = datetime_NY.strftime("%Y-%m-%d")
 
     df = pd.read_csv(f'daily_predictions/apple/{todays_date}.csv', index_col = 0)
     current_prediction = df['prediction'][0]
