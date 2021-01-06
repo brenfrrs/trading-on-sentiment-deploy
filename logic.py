@@ -63,10 +63,11 @@ while True:
 
             '''
 
-            def __init__(self, company, ticker='#', time_period='#tp_24'):
+            def __init__(self, company, ticker='#', time_period='#tp_12', count='#'):
                 self.company = company
                 self.time_period = time_period
                 self.ticker = ticker
+                self.count = count
 
                 if time_period == 12:
                     self.time_period = '#tp_12'
@@ -228,6 +229,7 @@ while True:
                     except:
                         continue
                 final_df = final_df.drop_duplicates(subset='fulltext')
+                self.count = final_df.shape[0] # add the total count for the aggregated df / flask app
                 final_df.drop(columns=['summary', 'author', 'update'], inplace=True)
                 final_df.dropna(subset=['fulltext'], inplace=True)
                 driver.close()
@@ -381,6 +383,7 @@ while True:
         prediction_row['probability_up'] = prob_up
         prediction_row['probability_down'] = prob_down
         prediction_row['ticker'] = query.ticker
+        prediction_row['total_articles'] = query.count
 
         time_ = datetime.now() #underscore so we don't overwrite the time module.
         pred_time = time_.strftime("%I:%M:%S %p")

@@ -32,16 +32,23 @@ import joblib
 
 app = Flask(__name__)
 
+#date will get the proper csv file.
+tz_NY = pytz.timezone('America/New_York')
+datetime_NY = datetime.now(tz_NY)
+todays_date = datetime_NY.strftime("%Y-%m-%d")
+
 @app.route('/')
 def home():
-	return render_template('home.html')
+	df = pd.read_csv(f'daily_predictions/apple/{todays_date}.csv', index_col = 0)
+	article_count = df['total_articles'][0]
+	return render_template('home.html', article_count=article_count)
 
 @app.route('/results/')
 def results():
-    #date will get the proper csv file.
-	tz_NY = pytz.timezone('America/New_York')
-	datetime_NY = datetime.now(tz_NY)
-	todays_date = datetime_NY.strftime("%Y-%m-%d")
+    # #date will get the proper csv file.
+	# tz_NY = pytz.timezone('America/New_York')
+	# datetime_NY = datetime.now(tz_NY)
+	# todays_date = datetime_NY.strftime("%Y-%m-%d")
 
 	df = pd.read_csv(f'daily_predictions/apple/{todays_date}.csv', index_col = 0)
 	current_prediction = df['prediction'][0]

@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
     <h1>Which direction will $AAPL stock* open tomorrow?</h1>
-    <p class="lead">Using [X] fulltext articles from [X] news outlets, the model has analyzed the sentiment of each article as well as the contents in order to predict whether Apple share prices will increase by at least 5 cents tomorrow morning (or not). How good is it?</p>
+    <br>
+    <p class="lead">Using {{article_count}} fulltext articles, the model has analyzed the sentiment of each article as well as the contents in order to predict whether Apple share prices will increase by at least 5 cents tomorrow morning (or not).</p>
+    <br>
+    <p class="lead"> How good is it? </p>
+    <br>
     <p class="lead">
       <a href={{url_for("results")}} class="btn btn-lg btn-secondary fw-bold border-white bg-black">Click here and find out.</a>
     </p>
